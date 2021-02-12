@@ -5,10 +5,7 @@ Created on Tue Jan 26 03:05:44 2021
 @author: 王泓文
 """
 
-
-
-
-#Day2 tips calculation
+#Day2 tips calculaion
 print("Welcome to the calculator")
 bill = input("How much is the total bill? $")
 tips = input("How much percentage you want to give as tips? 10, 12 or 15?")
