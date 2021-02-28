@@ -17,6 +17,13 @@ class Snake:
             turtle.color("white")
             self.snake.append(turtle)
 
+    def extend(self):
+        turtle = Turtle(shape="square")
+        turtle.penup()
+        turtle.color("white")
+        turtle.goto(self.snake[-1].position())
+        self.snake.append(turtle)
+
     def move(self):
         for segment in range(len(self.snake) - 1, 0, -1):
             next_x = self.snake[segment - 1].xcor()
