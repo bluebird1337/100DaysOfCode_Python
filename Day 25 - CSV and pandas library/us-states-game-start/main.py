@@ -19,6 +19,8 @@ correct = 0
 while correct < 50:
     answer = turtle.textinput(title=f"{correct}/50 States Correct", prompt="Make your answer:")
     answer = answer.title()
+    if answer == "Exit":
+        break
     if answer in name:
         name.remove(answer)
         correct += 1
@@ -26,5 +28,11 @@ while correct < 50:
         y_cor = int(data[data.state == answer].y)
         t.goto(x_cor, y_cor)
         t.write(answer, False, align="center", font=FONT)
+
+miss = {
+    "states": name,
+}
+miss = pd.DataFrame(miss)
+miss.to_csv("states_missed.csv")
 
 turtle.mainloop()
